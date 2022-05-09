@@ -20,10 +20,42 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
+<style>
+    .nav-custom{
+        background-color: #212529; 
+        color: yellow;
+    }
+
+    .nav-custom a{
+        color: yellow;
+    }
+
+    .nav-custom a:hover{
+        font-weight: bold;
+        color: yellow;
+        background-color: #212529;
+    }
+
+    .nav-custom a:active{
+        color: yellow;
+    }
+
+    .mk-form{
+        background-color: #212529; 
+        color: yellow;
+        padding: 2vw;
+        border-radius: 2.5vw;
+    }
+
+    .mk-form button[type=submit]{
+        width: 100%;
+    }
+</style>
+
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg py-3 sticky-top nav-custom">
+            <div class="container mk-nav">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('name', 'Maiskorn') }}
                 </a>
@@ -59,12 +91,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('products.index') }}">{{ __('Products') }}</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown nav">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-end nav-custom" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="mk-form">
     <h1 class="text-center">Edit Product</h1>
-    <a href="{{ route('products.index') }}" class="btn btn-success btn-sm">
+    <a href="{{ route('products.index') }}" class="btn btn-warning btn-sm">
         <i class="fa fa-plus" aria-hidden="true"></i>Go Back
     </a><br><br>
 
@@ -38,6 +39,7 @@
         </div>
         <br>
         
-        <button type="submit" class="btn btn-warning">Submit</button>
+        <button type="submit" class="btn btn-warning btn-block">Submit</button>
     </form>
+</div>
 @stop

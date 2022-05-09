@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="mk-form">
     <h1 class="text-center">Add Product</h1>
 
-    <a href="{{ route('products.index') }}" class="btn btn-success btn-sm">
+    <a href="{{ route('products.index') }}" class="btn btn-warning btn-sm">
         <i class="fa fa-plus" aria-hidden="true"></i>Go Back
-    </a>
+    </a><br><br>
 
     @if($errors->any())
         <div class="alert alert-danger">
@@ -40,4 +41,5 @@
         
         <button type="submit" class="btn btn-warning">Submit</button>
     </form>
+</div>
 @endsection

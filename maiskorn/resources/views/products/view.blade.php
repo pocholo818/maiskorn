@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="mk-form">
     <h1 class="text-center">Product Information</h1>
 
-    <a href="{{ route('products.index') }}" class="btn btn-success btn-sm">
+    <a href="{{ route('products.index') }}" class="btn btn-warning btn-sm">
         <i class="fa fa-plus" aria-hidden="true"></i>Go Back
     </a><br><br>
 
@@ -24,5 +25,6 @@
         <input type="number" name="price" value="{{ $product->price }}" readonly step="any" class="form-control" placeholder="Enter Product Price">
     </div>
     <br>
+</div>
         
 @endsection
