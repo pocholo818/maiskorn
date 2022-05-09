@@ -19,4 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// redirects user if not logged in
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('/products', App\Http\Controllers\ProductController::class);
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
