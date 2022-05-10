@@ -1,7 +1,14 @@
 @extends('layouts.app')
-
+<!DOCTYPE html>
+<html>
 @section('content')
-<div class="container">
+<head>
+        <title>Maiskorn</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    </head>
+<div class="container" style="margin-top:10%;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -52,8 +59,8 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-warning">
                                     {{ __('Login') }}
                                 </button>
 
@@ -71,3 +78,4 @@
     </div>
 </div>
 @endsection
+</html>
