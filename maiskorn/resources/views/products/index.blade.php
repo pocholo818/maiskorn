@@ -34,7 +34,7 @@
       <td>{{ $product->desc }}</td>
       <td>P{{ $product->price }}</td>
       <td>{{ $product->created_at }}</td>
-      <td>{{ $product->user_id }}</td>
+      <td>{{ $product->user->name}}</td>
       <form action="{{ route('products.destroy', $product->id) }}" method="post">
         <td><a class="btn btn-info" href="{{ route('products.show', $product->id) }}">View</a></td>
         <td><a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Edit</a></td>

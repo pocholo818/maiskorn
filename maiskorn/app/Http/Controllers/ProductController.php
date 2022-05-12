@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //
+    // get user's id
     public function __construct(){
         $this->middleware('auth');
     }
@@ -22,6 +23,8 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $user = User::where('id', Auth::id())->get();
+
         $products = Product::oldest()->paginate(5);
         return view('products.index', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
