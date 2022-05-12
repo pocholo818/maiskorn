@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
         <label>Product Description</label>
-        <textarea name="desc" value="{{ $product->desc }}" readonly class="form-control" placeholder="Product Description" rows="3"></textarea>
+        <textarea name="desc" readonly class="form-control" placeholder="Product Description" rows="3">{{ $product->desc }}</textarea>
     </div>
     <div class="form-group">
         <label>Product Price</label>
