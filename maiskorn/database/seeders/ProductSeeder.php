@@ -23,7 +23,9 @@ class ProductSeeder extends Seeder
             'code' => 'AAAA1',
             'desc' => 'Sample Product Description.',
             'price' => '99.99',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'photo' => 'default',
+            'user_id' => '1'
             ],
 
             [
@@ -31,7 +33,9 @@ class ProductSeeder extends Seeder
             'code' => 'BBBB2',
             'desc' => 'Example Product Description.',
             'price' => '69.99',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'photo' => 'default',
+            'user_id' => '1'
             ]
         ]);
 

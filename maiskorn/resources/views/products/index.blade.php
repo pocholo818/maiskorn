@@ -22,6 +22,7 @@
       <th scope="col">Description</th>
       <th scope="col">Price</th>
       <th scope="col">Creation Date</th>
+      <th scope="col">Created By</th>
       <th scope="col" colspan="3" class="text-center">Action</th>
     </tr>
 
@@ -33,6 +34,7 @@
       <td>{{ $product->desc }}</td>
       <td>P{{ $product->price }}</td>
       <td>{{ $product->created_at }}</td>
+      <td>{{ $product->user_id }}</td>
       <form action="{{ route('products.destroy', $product->id) }}" method="post">
         <td><a class="btn btn-info" href="{{ route('products.show', $product->id) }}">View</a></td>
         <td><a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Edit</a></td>

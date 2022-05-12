@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -12,6 +13,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -40,14 +47,13 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'name' => 'required',
-            'code' => 'required',
-            'desc' => 'required',
-            'price' => 'required',
-        ]);
-
-        Product::create($request->all());
+        $product = new Product();
+        $product->name = $request->name;
+        $product->code = $request->code;
+        $product->desc = $request->desc;
+        $product->price = $request->price;
+        $product->user_id = Auth::id();
+        $product->save();
 
         return redirect()->route('products.index')
             ->with('success', 'Product Created!');
