@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -24,6 +27,8 @@ class ProductController extends Controller
     {
         //
         $user = User::where('id', Auth::id())->get();
+
+        // $chunk = $products->chunk(5);
 
         $products = Product::oldest()->paginate(5);
         return view('products.index', compact('products'))
@@ -68,7 +73,7 @@ class ProductController extends Controller
             $path = $photo->storeAs('public/img', $image);
 
         }else{
-            $image = 'default';
+            $image = 'default.png';
         }
 
         // minimal
@@ -131,7 +136,14 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete();
+        // get photo
+        $photo = $product->photo;
+
+        if($photo){
+            Storage::delete('public/img'.$photo);
+        }
+
+        // $product->delete();
 
         return redirect()->route('products.index')
             ->with('success', 'Product Deleted!');
