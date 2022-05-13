@@ -49,12 +49,32 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // manual
+        // $product = new Product();
+        // $product->name = $request->name;
+        // $product->code = $request->code;
+        // $product->desc = $request->desc;
+        // $product->price = $request->price;
+
+        // photo
+        $photo = $request->file('photo');
+
+        if($request->hasFile('photo')){
+            $filenameWithExt = $photo->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $photo->getClientOriginalExtension();
+            $image = $filename.'_'.time().'.'.$extension;
+            $path = $photo->storeAs('public/img', $image);
+
+        }else{
+            $image = 'default';
+        }
+
+        // minimal
         $product = new Product();
-        $product->name = $request->name;
-        $product->code = $request->code;
-        $product->desc = $request->desc;
-        $product->price = $request->price;
+        $product->fill($request->all());
+        $product->photo = $image;
         $product->user_id = Auth::id();
         $product->save();
 
@@ -96,11 +116,8 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         //
-        $request->validate([
-
-        ]);
-
         $product->update($request->all());
+        $product->save();
 
         return redirect()->route('products.index')
             ->with('success', 'Product Updated!');

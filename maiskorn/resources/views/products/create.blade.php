@@ -19,7 +19,7 @@
         </ul>
         @endif
 
-    <form action="{{ route('products.store') }}" method="post">
+    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label>Product Name</label>
@@ -36,6 +36,10 @@
         <div class="form-group">
             <label>Product Price</label>
             <input type="number" name="price" step="any" class="form-control" placeholder="Enter Product Price">
+        </div>
+        <div class="form-group">
+            <label>Product Photo</label>
+            <input type="file" name="photo" step="any" class="form-control" placeholder="Enter Product Price">
         </div>
         <br>
         

@@ -9,10 +9,12 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id','name','code','desc','price','user_id','created_at'];
+    // mass assign
+    // protected $fillable = ['id','name','code','desc','price','user_id','created_at'];
 
-    //
-    // protected $table = 'users';
+    // minimal
+    protected $fillable = ['id','name','code','desc','price'];
+    // protected $guarded = ['photo'];
 
     public function user(){
         return $this->belongsTo(User::class);
