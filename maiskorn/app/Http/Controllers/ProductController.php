@@ -54,14 +54,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-        // manual
-        // $product = new Product();
-        // $product->name = $request->name;
-        // $product->code = $request->code;
-        // $product->desc = $request->desc;
-        // $product->price = $request->price;
-
         // photo
         $photo = $request->file('photo');
 
@@ -76,7 +68,7 @@ class ProductController extends Controller
             $image = 'default.png';
         }
 
-        // minimal
+        // 
         $product = new Product();
         $product->fill($request->all());
         $product->photo = $image;
@@ -137,13 +129,14 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         // get photo
-        $photo = $product->photo;
+        // $photo = $product->photo;
 
-        if($photo){
-            Storage::delete('public/img'.$photo);
-        }
+        
+        // if($photo){
+        //     Storage::delete('/img/'.$photo);
+        // }
 
-        // $product->delete();
+        $product->delete();
 
         return redirect()->route('products.index')
             ->with('success', 'Product Deleted!');
