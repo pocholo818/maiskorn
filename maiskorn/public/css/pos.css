@@ -1,0 +1,30 @@
+/* Colors font */
+.yellow-cl{
+    color: yellow;
+}
+.orange-cl{
+    color :#ffc107;
+}
+.blank-cl{
+    color: #212529;
+}
+.white-cl{
+    color: #fff;
+}
+/* background font */
+.yellow-bg{
+    background-color: yellow;
+}
+.orange-bg{
+    background-color :#ffc107;
+}
+.blank-bg{
+    background-color: #212529;
+}
+
+
+/* card products */
+.description{
+    font-weight: 500;
+    font-size: 16px;
+}
