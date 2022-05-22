@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" data-content="{{ csrf_token() }}">
 
     <title>{{ config('name', 'Maiskorn') }}</title>
 
@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('css')
 </head>
 
 <style>
@@ -51,6 +53,8 @@
         width: 100%;
     }
 </style>
+
+
 
 <body>
     <div id="app">
@@ -91,6 +95,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('products.index') }}">{{ __('Products') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('pos') }}">{{ __('Pos') }}</a>
+                            </li>
                             <li class="nav-item dropdown nav">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -120,5 +127,8 @@
             </div>
         </main>
     </div>
+    @yield('scripts')
 </body>
+
+
 </html>
