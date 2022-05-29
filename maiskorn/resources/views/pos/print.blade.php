@@ -9,7 +9,7 @@
 				}
 		</script>
 		<meta charset="utf-8" />
-		<title>Fast-Food Management System</title>
+		<title>Maiskorn</title>
 		<style>
 			.invoice-box {
 				max-width: 800px;
