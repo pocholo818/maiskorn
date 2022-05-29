@@ -96,7 +96,7 @@
                                 <a class="nav-link" href="{{ route('products.index') }}">{{ __('Products') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('pos') }}">{{ __('Pos') }}</a>
+                                <a class="nav-link" href="{{ route('pos') }}">{{ __('POS') }}</a>
                             </li>
                             <li class="nav-item dropdown nav">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

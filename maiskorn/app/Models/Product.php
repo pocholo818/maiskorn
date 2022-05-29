@@ -9,9 +9,6 @@ class Product extends Model
 {
     use HasFactory;
 
-    // mass assign
-    // protected $fillable = ['id','name','code','desc','price','user_id','created_at'];
-
     // minimal
     protected $fillable = ['id','name','code','desc','price'];
     // protected $guarded = ['photo'];
