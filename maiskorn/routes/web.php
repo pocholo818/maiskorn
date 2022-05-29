@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::controller(App\Http\Controllers\POSController::class)->group(function () {
     Route::get('/pos', 'index')->name('pos');
+    Route::get('/print', 'print')->name('print');
     Route::post('/orders', 'store');
 });
 

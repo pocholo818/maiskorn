@@ -101,6 +101,8 @@ $(document).ready(function () {
               .done(function(data) {
                   console.log(data);
                   $('.myalert').html('<div class="alert alert-success"><p>Order is Successful</p></div>');
+                  sessionStorage.setItem('arr', JSON.stringify(orderList));  //send array
+                  window.open('/print', '_blank').focus();
 
               })
               .fail(function(error) {
