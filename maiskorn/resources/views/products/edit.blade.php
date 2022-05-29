@@ -37,10 +37,10 @@
             <label>Product Price</label>
             <input type="number" name="price" value="{{ $product->price }}"  step="any" class="form-control" placeholder="Enter Product Price">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Product Photo</label>
             <input type="file" name="photo" step="any" class="form-control" placeholder="Enter Product Price">
-        </div>
+        </div> -->
         <br>
         
         <button type="submit" class="btn btn-warning btn-block">Submit</button>
