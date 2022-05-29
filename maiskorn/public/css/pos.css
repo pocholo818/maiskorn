@@ -1,4 +1,4 @@
-/* Colors font */
+Colors font
 .yellow-cl{
     color: yellow;
 }
@@ -27,4 +27,26 @@
 .description{
     font-weight: 500;
     font-size: 16px;
+}
+
+.card{
+    width: 12rem;
+    height: 3.1in;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+.card-text,.card-title{
+    margin: 0;
+    text-align: center;
+}
+
+.card-img-top{
+    height: 140px;
+}
+
+a.btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
