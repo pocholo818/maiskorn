@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orders;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class POSController extends Controller
@@ -31,6 +33,13 @@ class POSController extends Controller
         return view('pos.pos', ['products' => $products]);
     }
 
+    //returns PRINT view
+    public function print()
+    {
+ 
+        return view('pos.print');
+    }
+
 
       /**
      * Store a newly created resource in storage.
@@ -39,9 +48,7 @@ class POSController extends Controller
     public function store(Request $request)
     {
         $orders = new Orders();
-        // $orders->quantity = $request->quantity;
-        // $orders->product_id = $request->product_id;
-        // $orders->total_price = $request->total_price;
+
         $orders->fill($request->all());;
         $orders->save();
 
