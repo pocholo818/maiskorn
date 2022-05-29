@@ -1,0 +1,22 @@
+.card {
+    box-shadow: none;
+    border: #fff;
+    height:200px;
+    transform: translateY(5px);
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+    background-color: #fff;
+    transition: all 0.35s ease;
+  }
+.card-body{
+    color:#fff;
+    font-size: 30px;
+}
+
+.card-body h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:#fff;
+    font-size: 35px;
+}
