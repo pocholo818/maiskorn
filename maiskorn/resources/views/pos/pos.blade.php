@@ -22,7 +22,7 @@
                   <h5 class="card-title fw-bolder ">{{$product->name}}</h5>
                   <p class="card-text fw-semibold fst-italic text-muted">#{{$product->code}}</p>
                   <p class="card-text fw-light">{{$product->desc}}</p>
-                  <p class="card-text fw-light">Price: ₱{{$product->price}}.00</p>
+                  <p class="card-text fw-light">Price: ₱{{$product->price}}</p>
                   <a href="#"
                     class="btn btn-success orange-bg black-cl addBtn"
                     data-name="{{$product->name}}"
